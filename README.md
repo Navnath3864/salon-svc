@@ -1,0 +1,2 @@
+# salon-svc
+spring project
