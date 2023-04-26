@@ -1,4 +1,4 @@
-package com.ng.salon.product.model;
+package com.ng.salonsvc.product.model;
 
 public class Product {
 	private String name;
