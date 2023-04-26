@@ -1,11 +1,11 @@
-package com.ng.salon.bill.service;
+package com.ng.salonsvc.bill.service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.ng.salon.bill.model.Bill;
-import com.ng.salon.product.model.Product;
+import com.ng.salonsvc.bill.model.Bill;
 import com.ng.salonsvc.customer.model.CustomerRequest;
+import com.ng.salonsvc.product.model.Product;
 
 public class BillServiceImpl implements BillingService {
 

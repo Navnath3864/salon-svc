@@ -1,7 +1,5 @@
 package com.ng.salonsvc.customer.model;
 
-import org.springframework.validation.annotation.Validated;
-
 public class CustomerRequest {
 	private int id;
 	private String fName;
