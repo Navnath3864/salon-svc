@@ -1,9 +1,22 @@
 package com.ng.salonsvc.bill.service;
 
-import com.ng.salonsvc.bill.model.Bill;
-import com.ng.salonsvc.customer.model.CustomerRequest;
-import com.ng.salonsvc.product.model.Product;
+import java.util.List;
+
+import com.ng.salonsvc.bill.Request.BillRequest;
+import com.ng.salonsvc.bill.Response.BillResponse;
+import com.ng.salonsvc.bill.dao.entity.BillEntity;
+import com.ng.salonsvc.customer.dao.entity.CustomerEntity;
+import com.ng.salonsvc.product.dao.entity.ProductEntity;
 
 public interface BillingService {
-	Bill generateBill(CustomerRequest customer, Product product, int quantity);
+
+	BillResponse generateBillResponse(BillRequest billRequest);
+
+	List<BillEntity> getBill();
+
+	CustomerEntity getCustomerById(int id);
+
+	ProductEntity getProductById(int id);
+	// double calculateTotal (BillRequest billRequest);
+
 }

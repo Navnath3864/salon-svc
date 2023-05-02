@@ -1,9 +1,11 @@
 package com.ng.salonsvc.customer.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.ng.salonsvc.customer.dao.CustomerRepository;
 import com.ng.salonsvc.customer.dao.entity.CustomerEntity;
@@ -34,6 +36,12 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<CustomerEntity> getAllCustomers() {
 		List<CustomerEntity> list = customerRepository.findAll();
 		return list;
+	}
+
+	@Override
+	public CustomerEntity getCustomerById(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

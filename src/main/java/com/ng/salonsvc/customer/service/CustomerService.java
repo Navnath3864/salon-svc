@@ -7,6 +7,7 @@ import com.ng.salonsvc.customer.model.CustomerRequest;;
 
 public interface CustomerService {
 	CustomerRequest saveCustomer(CustomerRequest customer);
-	
 	List<CustomerEntity> getAllCustomers();
+//	CustomerEntity findById(int id);
+	CustomerEntity getCustomerById(int id);
 }
