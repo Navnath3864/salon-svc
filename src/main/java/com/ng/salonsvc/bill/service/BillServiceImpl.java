@@ -41,7 +41,7 @@ public class BillServiceImpl implements BillingService {
 		billEntity.setProductId(billRequest.getProductId());
 		billEntity.setQuantity(billRequest.getQuantity());
 		billEntity.setTotal(calculateTotal(billRequest.getQuantity(), billRequest.getProductId()));
-
+		billEntity.setDiscountAmout(discountPrice(billRequest));
 		BillEntity save = billRepository.save(billEntity);
 
 		billResponse.setCustomerId(billEntity.getCustomerId());
@@ -58,9 +58,14 @@ public class BillServiceImpl implements BillingService {
 		billResponse.setProductName(product.getName());
 
 		System.out.println("Bill Id :" + save.getId());
-		System.out.println("customer id :" + billEntity.getCustomerId());
-		System.out.println("product id :" + billEntity.getProductId());
-
+		System.out.println("customer id :" + billResponse.getCustomerId());
+		System.out.println("customer Name :" + billResponse.getCustomerName());
+		System.out.println("customer Email :" + billResponse.getCustomerEmail());
+		
+		System.out.println("product id :" + billResponse.getProductId());
+		System.out.println("product Name :" + billResponse.getProductName());
+		System.out.println("discount price : "+billEntity.getDiscountAmout());
+		
 		return billResponse;
 	}
 
@@ -78,5 +83,13 @@ public class BillServiceImpl implements BillingService {
 		ProductEntity prod = productRepository.findById(id);
 		double totalPrice = (prod.getPrice() * quantity);
 		return totalPrice;
+	}
+	
+	public double discountPrice(BillRequest billRequest) 
+	{
+		double disCountPrice=calculateTotal(billRequest.getQuantity(), billRequest.getProductId())-(((calculateTotal(billRequest.getQuantity(), billRequest.getProductId())) * billRequest.getDiscountPercent() )/100);
+		System.out.println("discount percetage: "+billRequest.getDiscountAmount());
+		System.out.println("discount price in function : "+disCountPrice);
+		return disCountPrice;
 	}
 }
