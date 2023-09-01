@@ -8,6 +8,7 @@ import com.ng.salonsvc.customer.dao.entity.CustomerEntity;
 @Repository
 public interface CustomerRepository extends JpaRepository<CustomerEntity, Integer>{
 
-	//use nbuilt JPA provided methods for CRUD operations like save , find
+	//use inbuilt JPA provided methods for CRUD operations like save , find
 	//only custom or JPA methods should be declared
+	CustomerEntity findById(int id);
 }

@@ -14,13 +14,13 @@ public class CustomerEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-	@Column(name = "f_name")
+	@Column(name = "fname")
 	private String fName;
-	@Column(name = "l_name")
+	@Column(name = "lname")
 	private String lName;
 	@Column(name = "address")
 	private String address;
-	@Column(name = "mob_number")
+	@Column(name = "mobile_number")
 	private String mobNumber;
 	@Column(name = "email")
 	private String email;
