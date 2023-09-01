@@ -1,8 +1,8 @@
-package com.ng.salon.bill.service;
+package com.ng.salonsvc.bill.service;
 
-import com.ng.salon.bill.model.Bill;
-import com.ng.salon.product.model.Product;
+import com.ng.salonsvc.bill.model.Bill;
 import com.ng.salonsvc.customer.model.CustomerRequest;
+import com.ng.salonsvc.product.model.Product;
 
 public interface BillingService {
 	Bill generateBill(CustomerRequest customer, Product product, int quantity);

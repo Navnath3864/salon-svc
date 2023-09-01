@@ -1,4 +1,4 @@
-package com.ng.salon.bill.model;
+package com.ng.salonsvc.bill.model;
 
 public class Bill {
 	private int id;
